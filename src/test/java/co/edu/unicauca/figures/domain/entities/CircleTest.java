@@ -79,13 +79,15 @@ public class CircleTest {
     /**
      * Prueba para validar que el constructor lanza una excepción cuando el valor del radio es inválido.
      */
+    @Test
     public void testConstructorThrowsExceptionForInvalidRadius() {
         assertThrows(IllegalArgumentException.class, () -> new Circle(0), "Se esperaba una excepción para radio 0");
         assertThrows(IllegalArgumentException.class, () -> new Circle(-5), "Se esperaba una excepción para radio negativo");
     }
     /**
      * Prueba para validar que el método setRadius lanza una excepción cuando se intenta asignar un valor inválido.
-     */    
+     */
+    @Test    
     public void testSetRadiusThrowsExceptionForInvalidValues() {
         assertThrows(IllegalArgumentException.class, () -> circle.setRadius(0), "Se esperaba una excepción para radio 0");
         assertThrows(IllegalArgumentException.class, () -> circle.setRadius(-3), "Se esperaba una excepción para radio negativo");
