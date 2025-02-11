@@ -14,8 +14,7 @@ package co.edu.unicauca.figures.domain.entities;
 
 public class Square extends Figure {
     private double side;
-    
-
+   
     /**
      * Constructor para crear un nuevo cuadrado.
      * @param side longitud del lado del cuadrado

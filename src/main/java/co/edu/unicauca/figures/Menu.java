@@ -12,7 +12,8 @@ import java.util.Scanner;
  * Clase que maneja la interfaz de usuario y la lógica del menú
  * para la aplicación de figuras geométricas.
  * 
- * @author Tu_Nombre
+ * @author Ana Sofia Arango Yanza
+ * @author Juan Diego Gomez Garces
  * @version 1.0
  */
 
@@ -29,6 +30,7 @@ public class Menu {
     
     /**
      * Inicia la ejecución del menú principal.
+     * Permite al usuario seleccionar una figura y realizar cálculos.
      */
     public void iniciar() {
         while (true) {
@@ -56,6 +58,9 @@ public class Menu {
         }
     }
     
+    /**
+     * Muestra el título del programa en la consola.
+     */
     private void mostrarTitulo() {
         System.out.println("\n*************************************************");
         System.out.println("*                                               *");
@@ -64,6 +69,10 @@ public class Menu {
         System.out.println("*************************************************");
     }
     
+    
+    /**
+     * Muestra el menú principal con las opciones disponibles.
+     */
     private void mostrarMenuPrincipal() {
         System.out.println("\nSeleccione una figura:");
         System.out.println("1. Circulo");
@@ -73,6 +82,11 @@ public class Menu {
         System.out.print("\nIngrese su opcion: ");
     }
     
+    /**
+     * Muestra el submenú de opciones para una figura específica.
+     * 
+     * @param figura Nombre de la figura geométrica.
+     */
     private void mostrarSubMenu(String figura) {
         System.out.println("\n--- " + figura + " ---");
         System.out.println("1. Calcular Area");
@@ -81,6 +95,12 @@ public class Menu {
         System.out.print("\nIngrese su opcion: ");
     }
     
+    
+    /**
+     * Lee la opción ingresada por el usuario y la convierte en entero.
+     * 
+     * @return Opción seleccionada, o -1 si la entrada no es válida.
+     */
     private int leerOpcion() {
         try {
             return Integer.parseInt(scanner.nextLine());
@@ -89,6 +109,12 @@ public class Menu {
         }
     }
     
+    /**
+     * Lee un número decimal ingresado por el usuario.
+     * 
+     * @param mensaje Mensaje que se muestra al usuario.
+     * @return Número ingresado por el usuario.
+     */
     private double leerDouble(String mensaje) {
         while (true) {
             try {
@@ -100,6 +126,9 @@ public class Menu {
         }
     }
     
+    /**
+     * Maneja la lógica del submenú del círculo.
+     */
     private void menuCirculo() {
         while (true) {
             mostrarSubMenu("Circulo");
@@ -126,6 +155,9 @@ public class Menu {
         }
     }
     
+    /**
+     * Maneja la lógica del submenú del cuadrado.
+     */
     private void menuCuadrado() {
         while (true) {
             mostrarSubMenu("Cuadrado");
@@ -152,6 +184,9 @@ public class Menu {
         }
     }
     
+    /**
+     * Maneja la lógica del submenú del triángulo.
+     */
     private void menuTriangulo() {
         while (true) {
             mostrarSubMenu("Triangulo");

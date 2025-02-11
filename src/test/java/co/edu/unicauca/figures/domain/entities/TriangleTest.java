@@ -12,14 +12,45 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- *
- * @author USUARIO
+ * Clase de pruebas unitarias para la clase Triangle.
+ * Se encarga de verificar el correcto cálculo del área y el perímetro
+ * de un triángulo. 
+ * 
+ * @author Ana Sofia Arango Yanza
+ * @author Juan Diego Gomez Garces
+ * @version 1.0
  */
 public class TriangleTest {
 
     private Triangle triangle;
 
     public TriangleTest() {
+    }
+    
+    @Test
+    public void testConstructor_ValidTriangle() {
+        Triangle tri = new Triangle(7, 4, 9, 5);
+        assertNotNull(tri, "El triángulo no debería ser nulo");
+        assertEquals(7, tri.getBase(), "Base incorrecta");
+        assertEquals(4, tri.getHeight(), "Altura incorrecta");
+        assertEquals(9, tri.getSide2(), "Lado 2 incorrecto");
+        assertEquals(5, tri.getSide3(), "Lado 3 incorrecto");
+    }
+    
+    @Test
+    public void testConstructor_InvalidSides() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new Triangle(0, 4, 5, 6);
+        });
+        assertEquals("Todos los lados y la altura deben ser mayores que cero", exception.getMessage());
+    }
+    
+    @Test
+    public void testConstructor_InvalidTriangleInequality() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new Triangle(10, 4, 2, 3); // No cumple con la desigualdad
+        });
+        assertEquals("Los lados no pueden formar un triangulo valido", exception.getMessage());
     }
 
     /**
